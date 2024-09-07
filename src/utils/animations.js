@@ -4,8 +4,8 @@ export const h1Animation = (target, duration) => {
     return gsap.from(target, {
         duration: duration,
         autoAlpha: 0
-    })
-}
+    });
+};
 
 export const h2Animation = (target, duration) => {
     return gsap.fromTo(target, {
@@ -15,8 +15,8 @@ export const h2Animation = (target, duration) => {
         duration: duration,
         y: 0,
         autoAlpha: 1
-    })
-}
+    });
+};
 
 export const imageAnimation = (target, duration) => {
     const q = gsap.utils.selector(target);
@@ -40,10 +40,10 @@ export const imageAnimation = (target, duration) => {
         }, {
             duration: duration,
             clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
-        }, duration)
+        }, duration);
 
     return timeline;
-}
+};
 
 export const articlesAnimation = (target, duration, stagger) => {
     return gsap.fromTo(target, {
@@ -52,5 +52,5 @@ export const articlesAnimation = (target, duration, stagger) => {
         duration: duration,
         autoAlpha: 1,
         stagger: stagger
-    })
-}
+    });
+};
