@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import {articlesAnimation, h1Animation, h2Animation, imageAnimation} from "../utils/animations.js";
 import {articles} from "../json/articles.js";
 import {addToRef} from "../utils/helpers.js";
+import {useNavigate} from "react-router-dom";
 const MainPage = () => {
     const h1Ref = useRef(null);
     const h2Ref = useRef(null);
@@ -12,6 +13,8 @@ const MainPage = () => {
     const imageSmallRef = useRef(null);
     const articlesRef = useRef(null);
     articlesRef.current = [];
+
+    const navigate = useNavigate();
 
     useLayoutEffect(() => {
         const h1 = h1Animation(h1Ref.current, .5);
@@ -32,6 +35,10 @@ const MainPage = () => {
             .add(imagesTimeline, "someLabel -=.75")
             .add(articles);
     }, []);
+
+    const handleArticleClick = (id) => {
+        navigate(`/article/${id}`);
+    }
 
     return (
         <>
@@ -62,7 +69,12 @@ const MainPage = () => {
                     </div>
                     {articles.map((article,i) => {
                         return (
-                            <article key={i} className="card" ref={(el) => addToRef(el, articlesRef)}>
+                            <article
+                                key={i}
+                                className="card"
+                                ref={(el) => addToRef(el, articlesRef)}
+                                onClick={() => handleArticleClick(i)}
+                            >
                                 <div className="card__header">
                                     <div className="category">{article.category}</div>
                                     <h3>{article.title}</h3>
