@@ -259,59 +259,65 @@ body {
 .text-primary {
   color: $primary;
 }
-
 .article-detail {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  position: relative;
   padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  margin: auto;
+  max-width: 800px;
+  margin: 0 auto;
 
-  .article-image {
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 20px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: $secondary;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color $transition, transform $transition;
 
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 8px;
-      object-fit: cover;
+    &:hover {
+      background-color: $primary;
+      transform: scale(1.05);
+    }
+
+    &:focus {
+      outline: none;
     }
   }
 
+  .article-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
   .article-content {
+    margin-top: 20px;
+
     h1 {
-      font-size: 28px;
+      font-size: 2rem;
       margin-bottom: 10px;
-      font-weight: bold;
     }
 
     p {
-      font-size: 20px;
-      margin-bottom: 20px;
-      color: #555;
+      font-size: 1.2rem;
+      color: $secondary;
     }
 
     a {
-      font-size: 16px;
-      color: #007bff;
-      text-decoration: none;
-      transition: color 0.3s;
+      display: inline-block;
+      margin-top: 10px;
+      color: $primary;
+      text-decoration: underline;
+      font-weight: 600;
 
       &:hover {
-        color: #0056b3;
-        text-decoration: underline;
+        color: $secondary;
       }
     }
   }

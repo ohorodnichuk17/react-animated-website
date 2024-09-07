@@ -1,11 +1,12 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { articles } from '../json/articles';
-import {imageAnimation} from "../utils/animations.js";
+import { imageAnimation } from "../utils/animations.js";
 
 function ArticleDetailPage() {
     const { id } = useParams();
+    const navigate = useNavigate();
     const article = articles[parseInt(id, 10)];
     const articleRef = useRef(null);
     const h1Ref = useRef(null);
@@ -29,6 +30,7 @@ function ArticleDetailPage() {
 
     return (
         <div className="article-detail" ref={articleRef}>
+            <button className="back-button" onClick={() => navigate('/')}>Back</button>
             <div className="article-image" ref={imgRef}>
                 <img src={article.image} alt={article.title} />
             </div>
