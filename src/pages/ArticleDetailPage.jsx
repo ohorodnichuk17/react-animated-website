@@ -20,7 +20,7 @@ function ArticleDetailPage() {
     return (
         <div className="article-detail" ref={articleRef}>
             <div className="article-image">
-                <img src={ArticleImage} alt={article.title} />
+                <img src={article.image} alt={article.title} />
             </div>
             <div className="article-content">
                 <h1>{article.title}</h1>
