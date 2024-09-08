@@ -1,8 +1,3 @@
-# React + Vite
+Sharing a simple demo website I built to practice my skills with the GSAP library. This small project includes smooth animations and transitions to enhance user experience. It's a great way to dive into GSAP and React for modern web design. Check out the video to see the effects in action!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://github.com/user-attachments/assets/3bab8922-e424-462b-bdfa-1cd28d4ddfc8
